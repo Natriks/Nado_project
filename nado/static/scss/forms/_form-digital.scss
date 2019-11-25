@@ -1,0 +1,31 @@
+.form-digital-space {}
+
+.form-digital {
+  max-width: 1060px;
+}
+
+.form-digital__inputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px 100px;
+}
+
+.form-digital__input-about {
+  grid-column: 1 / -1;
+}
+
+.form-digital__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+.form-digital__submit {
+  margin-right: 100px;
+  min-width: 260px;
+}
+
+.form-digital__agreement {
+  margin-right: auto;
+}

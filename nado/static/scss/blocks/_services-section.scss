@@ -1,0 +1,27 @@
+.services-section {
+  background: url("../img/bg-index-services.jpg") no-repeat center;
+  background-size: cover;
+}
+
+.services-section__body-row {
+  margin-bottom: 112px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.services-section__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.services-section__content-text {
+  max-width: 960px;
+  margin-right: 140px;
+}
+
+.services-section__content-certificates {
+  flex-shrink: 0;
+}

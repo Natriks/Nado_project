@@ -1,0 +1,21 @@
+.site-navigation {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.site-navigation__list {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  padding-left: 100px;
+  padding-right: 100px;
+  border-right: 1px solid #ffffff;
+
+  &:first-child {
+    padding-left: 0;
+  }
+
+  &:last-child {
+    padding-right: 0;
+    border-right: none;
+  }
+}

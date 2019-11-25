@@ -1,0 +1,52 @@
+.page-service-text {
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 1.25;
+}
+
+.page-service-description {
+  margin-top: 80px;
+  font-family: Muller;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 32px;
+  line-height: 40px;
+  max-width: 1000px;
+}
+
+.page-service-offer {
+
+  font-family: Muller;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 60px;
+  line-height: 70px;
+}
+
+.page-service-offer__text {
+  // color: black;
+
+  strong {
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  span {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #DD0707;
+  }
+}
+
+.page-strategy-howto {
+  font-family: Muller;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 60px;
+  line-height: 70px;
+
+  color: #DD0707;
+  span {
+    color: #ffffff;
+  }
+}

@@ -1,0 +1,28 @@
+.page-design-section-firm__text {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.4;
+  max-width: 1070px;
+
+  & > :first-child {
+    margin-top: 0;
+  }
+
+  & > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+.image-svg {
+  margin: auto;
+}
+
+.decor-logo-image-svg {
+  max-height: 450px;
+}
+
+.decor-design-svg {
+  margin: auto;
+}
+
+

@@ -1,0 +1,17 @@
+.header-logo {
+}
+
+.header-logo__svg {
+  display: block;
+  fill: #fe770a;
+  transition: 0.4s;
+
+  .is-navigation-drawer-opened & {
+    fill: #ffffff;
+  }
+}
+
+.header-logo-svg__agency-text {
+  fill: #ffffff;
+  transition: 0.4s;
+}

@@ -1,0 +1,51 @@
+@import "mixins";
+
+@import "globals/fonts";
+@import "globals/core";
+@import "globals/modifiers";
+@import "globals/container";
+
+@import "blocks/input";
+@import "blocks/checkbox";
+@import "blocks/button";
+@import "blocks/common-section-text";
+@import "blocks/common-section";
+@import "blocks/header-logo";
+@import "blocks/site-header";
+@import "blocks/nav-list";
+@import "blocks/site-navigation";
+@import "blocks/navigation-drawer";
+
+@import "blocks/welcome-scene";
+@import "blocks/welcome-main";
+@import "blocks/welcome";
+@import "blocks/index-company-name";
+
+@import "blocks/about-us-info";
+@import "blocks/about-us-section";
+
+@import "blocks/services-section-navigation";
+@import "blocks/services-certificates";
+@import "blocks/services-section";
+
+@import "blocks/page-service-row";
+@import "blocks/page-service-header";
+@import "blocks/page-service-title";
+@import "blocks/page-service-text";
+@import "blocks/page-service-section";
+@import "blocks/page-service-intro";
+@import "blocks/page-service-list";
+
+@import "blocks/about-company-section";
+
+@import "blocks/page-contacts";
+@import "blocks/page-production";
+@import "blocks/page-design";
+
+@import "forms/form-meet";
+@import "forms/form-digital";
+@import "blocks/scheme-list";
+
+@import "blocks/site-footer";
+
+@import "blocks/clients";

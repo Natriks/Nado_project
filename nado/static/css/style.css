@@ -1,0 +1,92 @@
+/* *{
+  border: tomato 1px solid;
+} */
+div, h1, h2, h3, body, a{
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+}
+
+.head{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding-top: 42px;
+  padding-left: 60px;
+  padding-right: 60px;
+  display: flex;
+  justify-content: space-between;
+}
+.logo{
+  height: 40px;
+  width: 244px;
+  background: url(../img/logo.png) center center / cover;
+}
+
+.head_btn{
+  font-family: Muller;
+  font-size: 16px;
+  line-height: 40px;
+  padding: 0;
+  /* or 250% */
+  display: flex;
+  align-items: center;
+  text-align: center;
+  text-transform: capitalize;
+  color: #ffffff;
+  background-color: transparent;
+
+  border: 1px solid #DD0707;
+  border-radius: 20px;
+}
+
+/* .head_btn::before{
+  content: "";
+  position: relative;
+  left: -1px;
+  top: -7.5px;
+  bottom: 0;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  background: url(../img/btnRect.png) center center / cover;
+} */
+
+.head_btn_img{
+  width: 40px;
+  height: 40px;
+  margin-right: 8px;
+  border: none;
+  background: url(../img/button.png) center center / cover;
+}
+
+.menu{
+  position: fixed;
+  left: 50%;
+  width: 380px;
+  height: 68px;
+  transform: translateX(-50%);
+  z-index: 5;
+  background: url(../img/menu.png) center center / cover;;
+
+}
+
+.head_btn{
+  width: 180px;
+  height: 40px;
+  padding: 0px;
+}
+
+/* Header */
+
+header{
+  background: url(../img/nado_index_bg.png) center center / cover;
+  height: 100vh;
+}
+
+.menu_img{
+  position: fixed;
+
+  background: url(../img/menu.png) center center / cover;
+}

@@ -1,0 +1,264 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Nado Agency | Event & PR</title>
+  <link rel="stylesheet" href="{% static 'scss/style.css' %}">
+</head>
+
+<body>
+
+  <style>
+    .loading-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100vw;
+      height: 100%;
+      background-color: #ffffff;
+      transition: 0.3s;
+    }
+
+    .loading-screen--hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .loading-screen--no-js {
+      display: none;
+    }
+  </style>
+  <div id="loading-screen" class="loading-screen loading-screen--no-js">
+    <div class="loading-screen__item">
+      <div class="dot-windmill"></div>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="site-header__inner container">
+      <div class="site-header__logo header-logo">
+        <a href="{% url 'index' %}">
+          <svg class="header-logo__svg" viewBox="0 0 196 32">
+            <path
+              d="M70.45 9.9a8.7 8.7 0 00-9.9 1.06l-.53.46-.04.03c-.74.74-.88 1.94-.2 2.75.77.92 2.14.99 2.99.14l.07-.07a4.85 4.85 0 013.98-1.37 4.76 4.76 0 11-3.98 8.07l-6.98-6.98V2.01C55.86.88 54.94 0 53.82 0c-1.13 0-2.05.92-2.05 2v8.26a8.69 8.69 0 00-9.13-.29 8.81 8.81 0 1010.58 13.89l.03-.04c.74-.74.88-1.93.21-2.75a2.03 2.03 0 00-3-.14l-.06.07a4.85 4.85 0 01-3.99 1.38 4.76 4.76 0 113.98-8.07l1.38 1.37v.07h.07l8.1 8.1a8.83 8.83 0 0012.45 0A8.75 8.75 0 0070.45 9.9zM17.62 17.62a8.81 8.81 0 00-14.2-6.94A4.06 4.06 0 000 8.8v15.61c0 1.1.92 2.01 2 2.01a2 2 0 002.02-2v-6.8a4.74 4.74 0 014.76-4.77 4.74 4.74 0 014.75 4.76v6.8a2 2 0 104.02 0v-6.8h.07z" />
+            <path
+              d="M27.95 8.81a8.81 8.81 0 000 17.62 8.7 8.7 0 005.39-1.87 4.01 4.01 0 003.42 1.87v-8.8a8.81 8.81 0 00-8.81-8.82zm0 13.57a4.74 4.74 0 01-4.76-4.76 4.74 4.74 0 014.76-4.76 4.74 4.74 0 014.75 4.76 4.74 4.74 0 01-4.75 4.76z" />
+            <g class="header-logo-svg__agency-text">
+              <path
+                d="M78.59 26.43a2.04 2.04 0 01-2.04-2c0-1.13.91-2.02 2.04-2.02s2.04.92 2.04 2.01c0 1.1-.91 2.01-2.04 2.01z" />
+              <path
+                d="M157.18 17.62a8.81 8.81 0 00-14.2-6.94 4.01 4.01 0 00-3.42-1.87v15.61a2 2 0 002 2.01c1.14 0 2.05-.91 2.05-2v-6.8a4.74 4.74 0 014.76-4.77 4.74 4.74 0 014.76 4.76v6.8a2 2 0 002 2.01c1.13 0 2.05-.91 2.05-2v-6.8z" />
+              <path
+                d="M90.96 8.81a8.81 8.81 0 000 17.62 8.7 8.7 0 005.4-1.87 4.01 4.01 0 003.41 1.87v-8.8a8.81 8.81 0 00-8.81-8.82zm0 13.57a4.74 4.74 0 01-4.76-4.76 4.74 4.74 0 014.76-4.76 4.76 4.76 0 010 9.52zM101.29 17.62a8.81 8.81 0 0017.62 0 8.7 8.7 0 00-1.87-5.4 4.01 4.01 0 001.87-3.4h-8.81a8.81 8.81 0 00-8.81 8.8zm13.56 0a4.74 4.74 0 01-4.75 4.76 4.74 4.74 0 01-4.76-4.76 4.76 4.76 0 019.52 0z" />
+              <path
+                d="M118.9 31.96c0-2.22-1.79-4.01-4.01-4.01h-4.8c-4.75 0-8.31-3.42-8.73-5.92a9.4 9.4 0 00.28 3.66A8.7 8.7 0 00110.1 32l8.8-.04zM177.83 31.96c0-2.22 1.8-4.01 4.02-4.01h4.8c4.75 0 8.31-3.42 8.73-5.92a9.4 9.4 0 01-.28 3.66 8.7 8.7 0 01-8.46 6.31l-8.8-.04zM138.04 17.62a8.84 8.84 0 00-9.37-8.8 8.82 8.82 0 00.56 17.62h8.81c0-2.26-1.8-4.06-4.05-4.06h-4.76a4.8 4.8 0 01-4.3-2.71H136a2.07 2.07 0 002.04-2.05zm-8.8-4.76a4.8 4.8 0 014.3 2.72h-8.6a4.8 4.8 0 014.3-2.72z" />
+              <path
+                d="M193.44 8.81c-1.12 0-2.04.92-2.04 2v6.81a4.74 4.74 0 01-4.76 4.76 4.74 4.74 0 01-4.75-4.76v-6.8c0-1.13-.92-2-2.05-2s-2.04.9-2.04 2v6.59a9 9 0 008.98 9.02 8.8 8.8 0 008.64-8.8v-6.81c.03-1.1-.85-2-1.97-2zM176.32 26.43c0-2.25-1.8-4.05-4.06-4.05h-4.75a4.75 4.75 0 113.38-8.1l.07.06c.78.78 2.04.78 2.85 0 .82-.77.78-2.04 0-2.85l-.1-.1a8.81 8.81 0 10-6.24 15.05h8.85z" />
+            </g>
+          </svg>
+        </a>
+      </div>
+      <div class="site-header__toggle-holder">
+        <button class="site-header__toggle-navigation" type="button" aria-label="Показать меню"
+          data-action="toggle-navigation-drawer">
+          <svg class="site-header__toggle-bg" viewBox="0 0 380 68">
+            <path d="M380 0C260 0 260 68 190 68S120 0 0 0h380z" /></svg>
+          menu
+        </button>
+      </div>
+      <div class="site-header__actions">
+        <a class="button" href="">
+          <span class="button__icon-holder button__icon-holder--left">
+            <svg class="button__icon" viewBox="0 0 14 14" width="16" height="16">
+              <path fill-rule="evenodd" d="M8 1a1 1 0 10-2 0v5H1a1 1 0 000 2h5v5a1 1 0 102 0V8h5a1 1 0 100-2H8V1z"
+                clip-rule="evenodd" /></svg>
+          </span>
+          <span class="button__text">Новый проект</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <div class="navigation-drawer">
+    <div class="navigation-drawer__inner container">
+      <nav class="navigation-drawer__menu site-navigation">
+        <ul class="site-navigation__list nav-list nav-list--has-columns">
+          <li><a href="{% url 'digital' %}">DIGITAL & WEB</a></li>
+          <li><a href="{% url 'strategy' %}">STRATEGY</a></li>
+          <li><a href="{% url 'design' %}">DESIGN & BRANDING</a></li>
+          <li><a href="{% url 'production' %}">PRODUCTION</a></li>
+          <li><a href="{% url 'marketing' %}">MARKETING</a></li>
+          <li><a href="{% url 'event' %}">EVENT & PR</a></li>
+        </ul>
+        <ul class="site-navigation__list nav-list">
+          <li><a href="{% url 'about' %}">КОМПАНИЯ</a></li>
+          <li><a href="{% url 'clients' %}">КЛИЕНТЫ</a></li>
+          <li><a href="{% url 'contacts' %}">КОНТАКТЫ</a></li>
+        </ul>
+      </nav>
+
+      <ul class="navigation-drawer__contact-info">
+        <li><a href="mailto:sales@nado.agency">sales@nado.agency</a></li>
+        <li><a href="tel:+7 (999)-999-99-99">+7 (999)-999-99-99</a></li>
+      </ul>
+
+      <button class="navigation-drawer__toggle" type="button" aria-label="Скрыть меню"
+        data-action="toggle-navigation-drawer">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 28" width="24" height="28">
+          <path
+            d="M24.37 13.57c.84-.84.84-2.2 0-3.05l-9.6-9.6A2.16 2.16 0 0013 0a2.14 2.14 0 00-1.78.91l-9.6 9.61a2.15 2.15 0 003.05 3.05l6.18-6.2v18.48a2.15 2.15 0 004.3 0V7.37l6.18 6.2c.84.84 2.2.84 3.04 0z" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <main class="main">
+    <article class="page-service">
+      <header class="page-service-header">
+        <div class="page-service-header__feature-image">
+          <img src="{% static 'img/bg-event.jpg' %}" alt="">
+        </div>
+        <div class="page-service-header__main container">
+          <div class="page-service-header__main-inner">
+            <div class="page-service-header__content">
+              <h1 class="page-service-header__title">EVENT & PR</h1>
+              <p class="page-service-header__subtitle">Наша миссия — находить новые идеи и решения по всему миру для
+                коммуникации бренда и его потребителя, стирая границы между online и offline.</p>
+            </div>
+            <div class="welcome__footer">
+              <ul class="welcome__offers">
+                <li>Press</li>
+                <li>Analysis</li>
+                <li>Research</li>
+              </ul>
+              <button class="welcome__button-to-scroll button" type="button">
+                <span class="button__icon-holder">
+                  <svg class="button__icon" width="16" height="16" viewBox="0 0 12 14">
+                    <path fill-rule="evenodd"
+                      d="M.7 6.7a1 1 0 000 1.4l4.5 4.5a1 1 0 00.8.4 1 1 0 00.8-.4L11.3 8a1 1 0 10-1.4-1.4L7 9.6V1a1 1 0 10-2 0v8.6L2.1 6.7a1 1 0 00-1.4 0z" />
+                  </svg>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="page-service-content">
+        <section class="page-service-section page-service-section--has-overlay-gradient"
+          style="background-image: url({% static 'img/bg-strategy-intro.jpg' %});">
+          <div class="page-service-section__inner container">
+            <div class="page-service-intro">
+              <div class="page-service-intro__content">
+                <h2 class="page-service-intro__title"><span>Наш подход</span></h2>
+                <div class="page-service-intro__text">
+                  <p>Надо всё и сразу :)<br>
+                    Маркетинговая стратегия, как комплексное решение</p>
+                </div>
+              </div>
+              <!-- <div class="page-service-intro__media">
+                <img src="img/quadrocopter.png" alt="" role="presentation">
+              </div> -->
+            </div>
+
+            <div class="page-service">
+              <h3 class="page-service-title">Когда и какая нужна стратегия</h3>
+
+              <ul class="page-service-list">
+                <li class="page-service-list__item">
+                  <h4 class="page-service-list__item-title"><span>Вы выходите<br> на новый рынок</span></h4>
+                  <div class="page-service-list__item-text">
+                    <p>Стратегия выхода на новый рынок.</p>
+                  </div>
+                </li>
+                <li class="page-service-list__item">
+                  <h4 class="page-service-list__item-title"><span>Вас нет<br> в социальных медиа</span></h4>
+                  <div class="page-service-list__item-text">
+                    <p>SMM стратегия.</p>
+                  </div>
+                </li>
+                <li class="page-service-list__item">
+                  <h4 class="page-service-list__item-title"><span>Запуск нового<br> продукта, ребрендинг</span></h4>
+                  <div class="page-service-list__item-text">
+                    <p>Продуктовая стратегия.</p>
+                  </div>
+                </li>
+              </ul>
+              <div class="page-service-description">
+                <p><strong>В результате:</strong> повышение эффективности
+                  инвестиций в маркетинг.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer common-section section">
+    <div class="site-footer__inner common-section__inner container">
+      <div class="common-section__header">
+        <h2 class="common-section__title">Давайте знакомиться</h2>
+      </div>
+
+      <div class="site-footer__body common-section__body">
+        <div class="site-footer__text">
+          <div class="site-footer__looking">Мы ищем не клиентов, а храбрецов,<span> готовых создать
+              лучший
+              продукт</span></div>
+          <div class="site-footer__description common-section-text">
+            <p>
+              ... и оставить конкурентов где-то позади. Находим инсайты и «хотелки» потребителей. Создаем уникальную
+              ценность вашего бизнеса в глазах клиента. Задаем высшую планку
+              стандартов, доводя каждый элемент до состояния «perfect».
+            </p>
+          </div>
+        </div>
+        <div class="site-footer__actions">
+          <a class="site-footer__button button button--huge" href="">
+            <span class="button__icon-holder button__icon-holder--left">
+              <svg class="button__icon" viewBox="0 0 14 14" width="16" height="16">
+                <path fill-rule="evenodd" d="M8 1a1 1 0 10-2 0v5H1a1 1 0 000 2h5v5a1 1 0 102 0V8h5a1 1 0 100-2H8V1z"
+                  clip-rule="evenodd" />
+              </svg>
+            </span>
+            <span class="button__text">Новый проект</span>
+          </a>
+          <a class="site-footer__button button button--huge" href="">
+            <span class="button__icon-holder button__icon-holder--left">
+              <svg class="button__icon" viewBox="0 0 14 14" width="16" height="16">
+                <path fill-rule="evenodd" d="M8 1a1 1 0 10-2 0v5H1a1 1 0 000 2h5v5a1 1 0 102 0V8h5a1 1 0 100-2H8V1z"
+                  clip-rule="evenodd" />
+              </svg>
+            </span>
+            <span class="button__text">Наша презентация</span>
+          </a>
+        </div>
+        <div class="site-footer__contacts">
+          <div class="site-footer__logo">
+            <img class="site-footer__logo-img" src="{% static 'img/logo.svg' %}" width="196" alt="Логотип NADO AGENCY">
+          </div>
+          <div class="site-footer__email"><a href="mailto:sales@nado.agency">sales@nado.agency</a></div>
+          <div class="site-footer__phone"><a href="tel:+7 (999)-999-99-99">+7 (999)-999-99-99</a></div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script> -->
+  <script src="{% static 'js/loading-screen.js' %}"></script>
+  <script src="{% static 'js/toggle-nav.js' %}"></script>
+  <!-- <script src="js/script.js"></script> -->
+</body>
+
+</html>

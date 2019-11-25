@@ -1,0 +1,60 @@
+.site-footer {
+  // background: url("../img/infinity.png") no-repeat calc(100vw - 836px) / 2043px 1200px,
+  //   url("../img/bg-common-section.jpg") no-repeat center / cover;
+  background: url("../img/bg-footer.jpg") no-repeat center / cover;
+}
+
+.site-footer__inner {
+  padding-bottom: 128px;
+}
+
+.site-footer__body {
+  max-width: 1050px;
+}
+
+.site-footer__text {
+  margin-bottom: 85px;
+}
+
+.site-footer__looking {
+  margin-bottom: 50px;
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 70px;
+  color: #fe770a;
+
+  span {
+    color: #ffffff;
+  }
+}
+
+.site-footer__description {}
+
+.site-footer__button {
+  margin-right: 50px;
+}
+
+.site-footer__actions {
+  margin-bottom: 120px;
+}
+
+.site-footer__contacts {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 300;
+  font-size: 32px;
+  line-height: 50px;
+  color: #ffffff;
+
+  a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+}
+
+.site-footer__logo {}
+
+.site-footer__logo-img {
+  display: block;
+}

@@ -1,0 +1,63 @@
+.scheme-list {
+}
+
+.scheme-list__item {
+  position: relative;
+  padding-top: 60px;
+  padding-bottom: 68px;
+  border-top: 1px solid #dd0707;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    margin-left: calc(5.2vw / 2);
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 20px;
+    background: url("../img/icon-we-arrows.png") no-repeat center;
+    background-size: contain;
+  }
+
+  &:last-child {
+    &::before {
+      content: none;
+    }
+  }
+}
+
+.scheme-list__item-title {
+  max-width: 260px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 24px;
+    height: 24px;
+    background: url("../img/icon-arrow-down.svg") no-repeat center;
+    background-size: contain;
+  }
+
+  &::before {
+    top: 20px;
+  }
+
+  &::after {
+    bottom: 24px;
+  }
+}
+
+.scheme-result {
+  padding: 20px;
+  text-align: center;
+  border: 1px solid #dd0707;
+}

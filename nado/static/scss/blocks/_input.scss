@@ -1,0 +1,21 @@
+.input {
+  display: block;
+  width: 100%;
+  padding: 12px 0;
+  color: currentColor;
+  background-color: transparent;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 32px;
+  line-height: 44px;
+  font-family: Muller;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 1px solid;
+  outline: none;
+
+  &::placeholder {
+    color: currentColor;
+    opacity: 0.8;
+  }
+}

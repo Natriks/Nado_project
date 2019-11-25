@@ -1,0 +1,63 @@
+.form-space {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  // background-color: #180606;
+  background-color: #0C0E11;
+}
+
+.form-space__inner {
+  position: relative;
+  padding-top: 200px;
+  padding-left: 150px;
+  padding-right: 150px;
+  padding-bottom: 200px;
+}
+
+.form-meet-main {
+  &> :last-child {
+    margin-bottom: 100px;
+  }
+}
+
+.form-meet {
+  margin-top: 80px;
+}
+
+.form-meet__input {
+  position: relative;
+  display: block;
+  height: 80px;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.form-meet__input-text {
+}
+
+.form-meet-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &> :first-child {
+    margin-top: 0;
+  }
+}
+
+.form-meet__submit {
+  margin-right: 100px;
+}
+
+.form-meet__agreement {
+  margin-right: auto;
+  color: rgba(#ffffff, 0.5);
+}
+
+.form-contacts {
+  background: url("../img/bg-index-services.jpg") no-repeat center;
+  background-size: cover;
+}

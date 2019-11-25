@@ -1,0 +1,43 @@
+.common-section {
+  min-height: 100vh;
+  outline: 1px hotpink;
+  background: url("../img/bg-common-section.jpg") no-repeat center;
+  background-size: cover;
+}
+
+.common-section__inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  min-height: inherit;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 150px;
+  padding-bottom: 150px;
+  box-sizing: border-box;
+
+  @media (min-width: 1280px) {
+    padding-left: 120px;
+    padding-right: 120px;
+  }
+}
+
+.common-section__header {
+  margin-bottom: 100px;
+}
+
+.common-section__title {
+  margin: 0;
+  font-weight: 500;
+  font-size: 48px;
+  font-family: "Neo Sans Pro Cyr";
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.common-section__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex-grow: 1;
+}

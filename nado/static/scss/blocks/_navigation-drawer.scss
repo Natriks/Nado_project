@@ -1,0 +1,125 @@
+.navigation-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-height: calc(100vh - 130px);
+  transform: translate3d(0, -100%, 0);
+  transition: 0.8s;
+  transition-delay: 0.2s;
+  opacity: 0;
+  box-sizing: border-box;
+  pointer-events: none;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    z-index: -1;
+    width: calc(100vmax * 3);
+    height: calc(100vmax * 3);
+    transform: translateX(-50%) scale(0);
+    background-color: #ec7333;
+    border-radius: 50%;
+    transition: 0.8s;
+  }
+
+  .is-navigation-drawer-opened & {
+    transform: translate3d(0, 0, 0);
+    transition-duration: 0s;
+    opacity: 1;
+    transition-delay: 0s;
+    pointer-events: all;
+
+    &::before {
+      transition-duration: 1s;
+      transition-delay: -0.4s;
+      transform: translateX(-50%) scale(1);
+    }
+  }
+}
+
+.navigation-drawer__inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-grow: 1;
+  padding-top: 172px;
+  padding-bottom: 100px;
+  transform: translateY(-40px);
+  opacity: 0;
+  transition: 0.1s;
+
+  .is-navigation-drawer-opened & {
+    opacity: 1;
+    transition: 0.6s;
+    transition-delay: 0.6s;
+    transform: translateY(0);
+  }
+}
+
+.navigation-drawer__menu {
+  margin-left: 80px;
+  margin-right: 80px;
+  margin-bottom: 80px;
+}
+
+.navigation-drawer__contact-info {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    margin-right: 120px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  a {
+    display: block;
+    padding: 12px;
+    font-size: 20px;
+    color: #ffffff;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      color: #0C0E11;
+    }
+  }
+}
+
+.navigation-drawer__toggle {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 36px;
+  padding: 4px;
+  appearance: none;
+  background-color: transparent;
+  -webkit-tap-highlight-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: currentColor;
+
+  &:hover,
+  &:focus {
+    color: #0C0E11;
+  }
+
+  svg {
+    display: block;
+    fill: currentColor;
+  }
+}

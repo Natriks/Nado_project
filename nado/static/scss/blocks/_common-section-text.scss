@@ -1,0 +1,17 @@
+.common-section-text {
+  font-weight: 300;
+  font-size: 32px;
+  line-height: 1.25;
+
+  & > :first-child {
+    margin-top: 0;
+  }
+
+  & > :last-child {
+    margin-bottom: 0;
+  }
+
+  b {
+    font-weight: 600;
+  }
+}
