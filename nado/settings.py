@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '-h_t)nk(czme11d#b#q5x4_b*#8+!7n=u^)$nfijy)f921o=y8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['nado.agency', 'www.nado.agency']
 
 
 # Application definition
@@ -123,3 +123,9 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'nado/static')
 ]
+
+# local settings
+try:
+    from .settings_local import *
+except ImportError as e:
+    pass
