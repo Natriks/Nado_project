@@ -15,6 +15,12 @@ function InitScene() { // wait for document ready
     // .addIndicators({ name: "Scale" }) // add indicators (requires plugin)
     .addTo(controller);
 
+  scene7 = new ScrollMagic.Scene({ triggerElement: document.body })//, duration: 300
+    .offset(document.documentElement.clientHeight / 2 + 10)
+    .setTween(".index-company-name svg", 1, { "fill-opacity": 1 })
+    // .addIndicators({ name: "Scale" }) // add indicators (requires plugin)
+    .addTo(controller);
+
   // Движение лого вверх/обратно
   scene2 = new ScrollMagic.Scene({ triggerElement: document.body })// 900
     .offset(document.documentElement.clientHeight / 2 + 20)

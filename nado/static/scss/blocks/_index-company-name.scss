@@ -5,4 +5,9 @@
   z-index: 5;
   width: 948px;
   transform: translate(-50%, calc(-50% - 120px));
+
+  svg {
+    fill: #ffffff;
+    fill-opacity: 0;
+  }
 }

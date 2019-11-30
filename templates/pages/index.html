@@ -77,7 +77,7 @@
         </button>
       </div>
       <div class="site-header__actions">
-        <a class="button" href="">
+        <a class="button button--shape-pink" href="">
           <span class="button__icon-holder button__icon-holder--left">
             <svg class="button__icon" viewBox="0 0 14 14" width="16" height="16">
               <path fill-rule="evenodd" d="M8 1a1 1 0 10-2 0v5H1a1 1 0 000 2h5v5a1 1 0 102 0V8h5a1 1 0 100-2H8V1z"
@@ -123,8 +123,11 @@
   </div>
 
   <div class="index-company-name">
-    <img src="{% static 'img/nado.svg' %}" width="948" alt="nado">
-  </div>
+    <!-- <img src="{% static 'img/nado.svg' %}" width="948" alt="nado"> -->
+    <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 949 322">
+      <path
+        d="M891.089 125.281l.003.002c61.911 35.033 69.614 114.721 22.429 161.099l-.006.006-.007.006c-39.883 39.482-104.158 39.456-143.59.018l-115.615-115.63c-11.196-11.644-27-18.572-44.539-18.572-37.123 0-66.321 32.041-62.156 69.993l.002.013.001.012c3.254 28.357 25.982 51.044 54.247 54.751l.043.006.043.005c20.341 2.311 39.334-5.087 52.324-18.079 8.574-8.576 22.004-8.61 29.755.526 6.372 7.74 4.818 19.461-2.678 26.966-39.884 39.473-104.152 39.444-143.581.009-45.962-45.968-38.66-124.876 21.612-160.314 33.255-19.468 73.898-17.084 105.276 3.295l7.723 5.015V25.3259c0-10.414 8.801-19.3281 19.752-19.3281 11.008 0 19.752 8.5439 19.752 19.3281V172.512l1.464 1.464 84.497 84.508c11.553 11.555 26.888 18.537 44.504 18.537 37.123 0 66.32-32.04 62.155-69.993l-.001-.012-.002-.013c-3.253-28.357-25.982-51.043-54.247-54.751l-.043-.005-.042-.005c-20.342-2.312-39.334 5.087-52.324 18.078l3.536 3.535-3.536-3.535c-8.575 8.576-22.004 8.611-29.756-.525-4.586-5.567-4.917-11.046-3.051-16.382 1.982-5.665 6.529-11.258 11.858-15.882 32.224-27.318 77.745-32.909 114.198-12.25zM428.721 296.664l-2.951-4.721-4.379 3.44c-17.137 13.465-38.744 21.615-62.394 21.615-56.303 0-102-45.697-102-102 0-56.302 45.697-102 102-102 56.302 0 102 45.698 102 102v101.727c-13.696-1.505-25.442-9.126-32.276-20.061zm-132.504-81.666c0 34.862 27.918 62.78 62.78 62.78 34.861 0 62.78-27.918 62.78-62.78 0-34.861-27.919-62.78-62.78-62.78-34.862 0-62.78 27.919-62.78 62.78zM37.5075 133.433l2.9847 4.53 4.272-3.343c17.2094-13.468 38.9097-21.622 62.6658-21.622 56.509 0 101.57 45.618 101.57 101.952v82.652c0 10.545-8.543 19.396-19.494 19.396-10.636 0-19.494-8.537-19.494-19.396v-82.604c0-34.88-28.041-62.78-63.012-62.78-34.9714 0-63.0121 27.9-63.0121 62.78v82.604c0 10.545-8.5425 19.396-19.4939 19.396C13.9152 316.998 5 308.09 5 297.602V113.27c13.658 1.501 25.2186 9.101 32.5075 20.163z"
+        stroke="#fff" stroke-width="10" /></svg> </div>
 
   <div id="fullpage">
     <div class="welcome page-service-section--has-overlay-gradient section"
@@ -413,7 +416,7 @@
             </div>
           </div>
           <div class="site-footer__actions">
-            <a class="site-footer__button button button--huge" href="">
+            <a class="site-footer__button button button--huge button--shape-pink" href="">
               <span class="button__icon-holder button__icon-holder--left">
                 <svg class="button__icon" viewBox="0 0 14 14" width="16" height="16">
                   <path fill-rule="evenodd" d="M8 1a1 1 0 10-2 0v5H1a1 1 0 000 2h5v5a1 1 0 102 0V8h5a1 1 0 100-2H8V1z"
@@ -432,14 +435,37 @@
               <span class="button__text">Наша презентация</span>
             </a>
           </div>
-          <div class="site-footer__contacts">
+          <!-- <div class="site-footer__contacts">
             <div class="site-footer__logo">
               <img class="site-footer__logo-img" src="{% static 'img/logo.svg' %}" width="196"
                 alt="Логотип NADO AGENCY">
             </div>
             <div class="site-footer__email"><a href="mailto:sales@nado.agency">sales@nado.agency</a></div>
             <div class="site-footer__phone"><a href="tel:+7 (999)-999-99-99">+7 (999)-999-99-99</a></div>
+          </div> -->
+        </div>
+      </div>
+      <div class="site-footer__bottom site-footer-bottom">
+        <div class="site-footer-bottom__inner container">
+          <div class="site-footer-bottom__logo">
+            <img class="site-footer-bottom__logo-img" src="{% static 'img/logo.svg' %}" width="196"
+              alt="Логотип NADO AGENCY">
           </div>
+          <div class="site-footer-bottom__contacts">
+            <div class="site-footer-bottom__phone"><a href="tel:+7 (999)-999-99-99">+7 (999)-999-99-99</a></div>
+            <div class="site-footer-bottom__email"><a href="mailto:sales@nado.agency">sales@nado.agency</a></div>
+          </div>
+          <div class="site-footer-bottom__copy">© 2015-2019 Nado agency</div>
+          <button class="site-footer-bottom__button-to-scroll button button--text-black button--shape-black"
+            type="button">
+            <span class="button__icon-holder">
+              <svg class="button__icon" width="16" height="16" viewBox="0 0 12 14">
+                <path fill-rule="evenodd"
+                  d="M.705 7.292a1 1 0 010-1.414L5.17 1.413a1.007 1.007 0 01.828-.424.997.997 0 01.828.424l4.465 4.465a1 1 0 01-1.414 1.414L6.998 4.413V13a1 1 0 11-2 0V4.413L2.12 7.292a1 1 0 01-1.414 0z"
+                  clip-rule="evenodd" />
+              </svg>
+            </span>
+          </button>
         </div>
       </div>
     </footer>

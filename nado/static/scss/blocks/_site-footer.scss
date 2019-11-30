@@ -2,6 +2,11 @@
   // background: url("../img/infinity.png") no-repeat calc(100vw - 836px) / 2043px 1200px,
   //   url("../img/bg-common-section.jpg") no-repeat center / cover;
   background: url("../img/bg-footer.jpg") no-repeat center / cover;
+  position: relative;
+  &--pink {
+    background: url("../img/bg-footer-pink.jpg") no-repeat center / cover;
+    position: relative;
+  }
 }
 
 .site-footer__inner {
@@ -38,23 +43,3 @@
   margin-bottom: 120px;
 }
 
-.site-footer__contacts {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-weight: 300;
-  font-size: 32px;
-  line-height: 50px;
-  color: #ffffff;
-
-  a {
-    color: #ffffff;
-    text-decoration: none;
-  }
-}
-
-.site-footer__logo {}
-
-.site-footer__logo-img {
-  display: block;
-}

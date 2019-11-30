@@ -55,8 +55,32 @@
     opacity: 0.8;
   }
 
+  &--shape-pink {
+    border-color: #ff005c;
+
+    &::before {
+      background-image: radial-gradient(circle farthest-side at 50.15%, transparent 100%, #ff005c 0);
+    }
+
+    &::after {
+      background-color: #ff005c;
+    }
+  }
+
+  &--shape-black {
+    border-color: #0c0e11;
+
+    &::before {
+      background-image: radial-gradient(circle farthest-side at 50.15%, transparent 100%, #0c0e11 0);
+    }
+
+    &::after {
+      background-color: #0c0e11;
+    }
+  }
+
   &--text-black {
-    color: #180606;
+    color: #0c0e11;
 
     &:hover,
     &:focus {
