@@ -1,0 +1,31 @@
+.planning-steps-item {
+  position: relative;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 100px;
+  padding-right: 100px;
+  text-align: center;
+  border-right: 2px solid #fe770a;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: calc(100% + 28px);
+    right: 0;
+    width: 24px;
+    height: 24px;
+    margin-left: auto;
+    margin-right: auto;
+    transform: translateX(50%);
+    background: url(../img/icon-arrow-down.svg) no-repeat center;
+    background-size: contain;
+  }
+
+  &:last-child {
+    border-right: none;
+
+    &::before {
+      content: none;
+    }
+  }
+}
