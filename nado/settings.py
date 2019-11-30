@@ -25,7 +25,8 @@ SECRET_KEY = '-h_t)nk(czme11d#b#q5x4_b*#8+!7n=u^)$nfijy)f921o=y8'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['nado.agency', 'www.nado.agency']
+ALLOWED_HOSTS = ['nado.agency', 'www.nado.agency', '127.0.0.1',
+                 'localhost', 'nadoagency.ru', 'www.nadoagency.ru']
 
 
 # Application definition
