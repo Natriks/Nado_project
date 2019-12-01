@@ -1,21 +1,51 @@
 .site-navigation {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+
+  @media (min-width: 1024px) {
+    grid-template-columns: 2fr 1fr;
+  }
 }
 
 .site-navigation__list {
-  padding-top: 80px;
-  padding-bottom: 80px;
-  padding-left: 100px;
-  padding-right: 100px;
-  border-right: 1px solid #ffffff;
-
-  &:first-child {
-    padding-left: 0;
-  }
+  border-bottom: 1px solid #ffffff;
 
   &:last-child {
-    padding-right: 0;
-    border-right: none;
+    border-bottom: none;
+  }
+
+  @media (max-width: 1023px) {
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    &:first-child {
+      padding-top: 0;
+    }
+
+    &:last-child {
+      padding-right: 0;
+      padding-bottom: 0;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    padding: 40px;
+    border-bottom: none;
+    border-right: 1px solid #ffffff;
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:last-child {
+      border-right: none;
+    }
+  }
+
+  @media (min-width: 1600px) {
+    padding: 60px 80px;
+  }
+
+  @media (min-width: 1920px) {
+    padding: 80px 100px;
   }
 }

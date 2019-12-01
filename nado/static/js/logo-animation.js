@@ -5,8 +5,8 @@ var pad = 150;
 var controller = new ScrollMagic.Controller();
 
 function InitScene() { // wait for document ready
-  console.log("InitScene");
-  console.log(-(document.documentElement.clientHeight / 2 - pad));
+  // console.log("InitScene");
+  // console.log(-(document.documentElement.clientHeight / 2 - pad));
 
   // Масштабирование лого
   scene1 = new ScrollMagic.Scene({ triggerElement: document.body })//, duration: 300

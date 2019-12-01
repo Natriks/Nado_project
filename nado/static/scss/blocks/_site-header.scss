@@ -27,9 +27,24 @@
   justify-content: space-between;
 }
 
+.site-header__toggle-menu-mobile {
+  .is-navigation-drawer-opened & {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  @media (min-width: 1024px) {
+    display: none;
+  }
+}
+
 .site-header__logo {
   flex-shrink: 0;
   width: 196px;
+
+  @media (max-width: 767px) {
+    width: 124px;
+  }
 }
 
 .site-header__toggle-holder {
@@ -49,6 +64,10 @@
   .is-navigation-drawer-opened & {
     opacity: 0;
     pointer-events: none;
+  }
+
+  @media (max-width: 1023px) {
+    display: none;
   }
 }
 
@@ -101,6 +120,12 @@
   .button {
     .site-header--active & {
       background-color: #180606;
+    }
+  }
+
+  @media (max-width: 1023px) {
+    .button__text {
+      display: none;
     }
   }
 }
